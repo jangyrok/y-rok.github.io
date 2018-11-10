@@ -1,0 +1,72 @@
+title: Y Rok
+description: The blog page for organizing my studies and projects.
+show_downloads: false
+
+baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
+url: "https://y-rok.github.io" # change this to the base hostname & protocol for your site
+tag_page: '/tags'
+category_page: '/category'
+
+permalink: /:categories/:year-:month-:day/:title:output_ext
+
+google_analytics:
+# cayman-blog date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+cayman-blog:
+  date_format: "%b %-d, %Y"
+
+theme: # leave it empty
+
+# social
+author: "Y Rok"
+image: /thumbnail-jumbo.png
+twitter:
+  username: lorepirri
+
+github : 
+  owner_url : https://github.com/y-rok
+  owner_name : Y Rok
+facebook:
+#   #publisher: 100002031927279
+  profile_id: 100003245191446
+#   #app_id: 100002031927279
+#   authors: YoungRok Jang
+disqus:
+  shortname: Y ROk
+#  admins:
+
+social:
+  - name: Twitter
+    icon: twitter
+    username: TheBenCentra
+    url: 
+    desc: Follow me on Twitter
+    share: true
+
+  - name: Facebook
+    icon: facebook
+    username: thebencentra
+    url: https://www.facebook.com/rok.jang
+    desc: Friend me on Facebook
+    share: true
+
+  - name: GitHub
+    icon: github
+    username: bencentra
+    url: https://github.com/y-rok
+    desc: Fork me on GitHub
+    share: false
+
+  - name: LinkedIn
+    icon: linkedin
+    username: Ben Centra
+    url: https://www.linkedin.com/in/young-rok-jang-842aa194/
+    desc: Connect with me on LinkedIn
+    share: true
+
+  - name: Google+
+    icon: google-plus
+    username:
+    url:
+    desc: Add me to your Circles
+    share: true
