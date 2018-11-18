@@ -1,10 +1,10 @@
 ---
-layout: about
-title: About Me
-tagline: Some description about Y Rok
+layout: page
+title: About 
 permalink: /about
 ---
 
+<img src="{{ site.baseurl }}/assets/profile.jpg" title="Profile Picture" class="profile" >
 
 ## Education
 - 연세대학교 컴퓨터과학 학사졸
@@ -14,6 +14,3 @@ permalink: /about
 - Natural Language Processing
 - Deep Learning 
 
-## Contact
-- email: jyrok3357@gmail.com
-- [GitHub](https://github.com/y-rok)
