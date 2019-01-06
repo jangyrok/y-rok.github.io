@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "[Mac] Pycharm으로 Python 개발 환경 구축하기"
+date:   2017-11-29 00:00:00
+author: y-rok
+categories: python
+tags: python pycharm
+---
+
+## Intro
+
+`Pycharm`은 jetbrain사에서 만든 IDE로 `java`, `android` 개발 등을 [Intellij IDEA](https://ko.wikipedia.org/wiki/IntelliJ_IDEA)에서 한 경험이 있다면 유사한 환경에서 python 작업을 할 수 있을 것이다.
+
+`pycharm`은 제공하는 기능에 따라 `Community Edition`(무료)과 `Professional Edition`(유료)을 제공한다. 제공하는 기능의 차이는 [이 곳](https://www.jetbrains.com/pycharm/features/editions_comparison_matrix.html)을 참고하자.
+
+## Pycharm 설치 및 Interpreter 설정
+
+[Pycharm 공식 페이지](https://www.jetbrains.com/pycharm/download/#section=mac)에서 원하는 Edtion을 다운받아 설치한다.
+
+
+![](/assets/img/temp/pycharm_intro.png)
+

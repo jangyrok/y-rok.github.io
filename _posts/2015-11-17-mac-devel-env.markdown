@@ -124,3 +124,7 @@ Default shell을  `zshell`로 변경한다.
 ```bash
 >>>  chsh -s `which zsh`
 ```
+
+Terminal을 다시 키면 다음과 같이 zshell이 실행되는 것을 확인할 수 있다.
+
+![](/assets/img/2015-11-17-mac-devel-env/zsh.png)

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://y-rok.github.io/sitemap.xml
