@@ -14,6 +14,7 @@ tags: zshell homebrew tmux
 
 #### Homebrew
 - Linux의 yum, apt-get과 유사하게 Mac에서 가장 많이 쓰이는 Package 관리자
++
 
 #### Tmux 
 - 1개의 윈도우 안에서 여러개의 terminal을 화면 분할 등을 통해 활용할 수 있는 Terminal Multiplexer 
