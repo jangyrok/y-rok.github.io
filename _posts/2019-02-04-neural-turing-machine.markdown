@@ -19,9 +19,10 @@ permalink: /neural-turing-machine
 **질문 혹은 토론하고 싶은 사항이 있다면 댓글 부탁드립니다. :)**
 
 
+
 ## 발표 영상
 
-<iframe width="100%" height="480" src="http://www.youtube.com/embed/J9f6r2EH3ag" frameborder="0" allowfullscreen></iframe>
+{% youtube https://www.youtube.com/watch?v=J9f6r2EH3ag %}
 
 ## 질문 & 답변
 ### Read와 Write의 Weight은 다른 Vector 인가?
