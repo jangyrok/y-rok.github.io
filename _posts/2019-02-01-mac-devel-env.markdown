@@ -1,10 +1,11 @@
 ---
 layout: post
 title:  "Mac 개발 환경 설정 - Homebrew, Tmux, zshell 설치 하기"
-date:   2017-11-17 00:00:00
+date:   2019-2-1 00:00:00
 author: y-rok
-categories: Mac
+categories: mac
 tags: zshell homebrew tmux
+permalink : /mac-configuration
 ---
 
 

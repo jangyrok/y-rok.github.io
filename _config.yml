@@ -79,21 +79,21 @@ social:
 
   - name: Facebook
     icon: facebook
-    username: thebencentra
-    url: https://www.facebook.com/rok.jang
+    username: Young Rok Jang
+    url: https://www.facebook.com/yrok.jang
     desc: Friend me on Facebook
     share: true
 
   - name: GitHub
     icon: github
-    username: bencentra
+    username: y-rok
     url: https://github.com/y-rok
     desc: Fork me on GitHub
     share: false
 
   - name: LinkedIn
     icon: linkedin
-    username: Ben Centra
+    username: Young Rok Jang
     url: https://www.linkedin.com/in/young-rok-jang-842aa194/
     desc: Connect with me on LinkedIn
     share: true
