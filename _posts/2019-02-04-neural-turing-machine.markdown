@@ -13,8 +13,8 @@ permalink: /neural-turing-machine
 ---
 
 이번 포스트에서 소개드릴 논문은 Google Deepmind에서 2014년에 발표한 **Neural Turing Machine**입니다. 아래 
-[발표 영상](#section)
-을 보고 [질문 & 답변](#section-1) 글을 참고하시기 바랍니다. 
+[발표 영상](#발표-영상)
+을 보고 [질문 & 답변](#질문--답변) 글을 참고하시기 바랍니다. 
 
 **질문 혹은 토론하고 싶은 사항이 있다면 댓글 부탁드립니다. :)**
 
