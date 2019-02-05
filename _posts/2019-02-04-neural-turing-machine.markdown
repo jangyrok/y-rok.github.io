@@ -59,3 +59,15 @@ permalink: /neural-turing-machine
 - **복잡한 알고리즘을 수행하기 위해서 1번의 time step에서 여러번의 Read, Write Operation이 필요할 수 있음**
 - 예를 들어, Copy Task같은 단순한 알고리즘을 수행하기 위해서는 각 time step에서 Read 혹은 Write 1개의 Operation만 필요하지만 Sorting Task를 수행하기 위해서는 Write 했던 것을 메모리에서 다른 위치로 옮기고 등의 복잡한 Operation 필요
 - 따라서, Task에 따라 Head 수를 Hyper-parameter로 결정
+
+
+## References
+
+- 설명 블로그 (영어)
+   - [A Stable Neural-Turing-Machine (NTM) Implementation (Source Code and Pre-Print)](https://www.scss.tcd.ie/joeran.beel/blog/2018/08/01/a-stable-neural-turing-machine-ntm-implementation-source-code-and-pre-print/)
+   - [Neural Turing Machines : an "artificial" working memory ?](https://medium.com/@benjamin_47408/neural-turing-machines-an-artificial-working-memory-cd913420508b)
+   - [Neural Turing Machines: a fundamental approach to access memory in deep learning](https://medium.com/@jonathan_hui/neural-turing-machines-a-fundamental-approach-to-access-memory-in-deep-learning-b823a31fe91d)
+- 설명 블로그 (한글)
+   - [Neural Turing Machine](https://norman3.github.io/papers/docs/neural_turing_machine.html)
+- Open Source
+   - [snowkylin/ntm](https://github.com/snowkylin/ntm)
