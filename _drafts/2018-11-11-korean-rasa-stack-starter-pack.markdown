@@ -10,15 +10,15 @@ tags: chatbot rasa
 
 ## Intro 
 
-이 번 Post에서는 인사를 나누고 간단한 농담을 할 수 있는 `한국어 Chatbot`을 만들어 보고자 한다. Rasa에서 제공하는 [Rasa Stack Starter pack](https://github.com/RasaHQ/starter-pack-rasa-stack)와 대부분 유사하지만 `영어`가 아닌 `한국어`를 이해하기 위해 다음 사항을 수정 하였다.
+이 번 Post에서는 인사를 나누고 간단한 농담을 할 수 있는 `한국어 Chatbot`을 만들어 보고자 합니다. Rasa에서 제공하는 [Rasa Stack Starter pack](https://github.com/RasaHQ/starter-pack-rasa-stack)와 대부분 유사하지만 `영어`가 아닌 `한국어`를 이해하기 위해 다음 사항을 수정 및 구현 하였습니다.
 
 - 영어 학습데이터를 한국어로 수정
-- Mecab을 활용하여 형태소 분석 단위로 Tokenization
+- [Open Korean Text](https://github.com/open-korean-text/open-korean-text)을 활용하여 형태소 분석 단위로 Tokenization
 - tensorflow_embedding을 활용하여 NLU 모듈 학습
 
-수정한 소스 코드는 [Korean RASA Stack starter-pack](https://github.com/y-rok/Korean_starter-pack-rasa-stack.git)에서 확인할 수 있다. 
+수정한 소스 코드는 [Korean RASA Stack starter-pack](https://github.com/y-rok/Korean_starter-pack-rasa-stack.git)에서 확인할 수 있습니다.
 
-Post는 다음 순서로 설명할 것이다.
+이번 Post는 다음 순서로 설명합니다.
 
 - [Korean RASA Stack starter-pack 다운로드 및 설치](#Korean-RASA-Stack-starter-pack-다운로드-및-설치)
 - [RASA NLU 모델 학습](#RASA-NLU-모델-학습)
@@ -27,13 +27,13 @@ Post는 다음 순서로 설명할 것이다.
 
 ## Korean RASA Stack starter-pack 다운로드 및 설치
 
-`git`을 활용하여 [RASA Stack starter-pack](https://github.com/y-rok/Korean_starter-pack-rasa-stack.git)를 다운로드 한다.
+`git`을 활용하여 [RASA Stack starter-pack](https://github.com/y-rok/Korean_starter-pack-rasa-stack.git)를 다운로드 합니다.
 
 ```bash
 ❯❯❯ git clone https://github.com/y-rok/Korean_starter-pack-rasa-stack.git
 ```
 
-이 후 프로젝트에 필요한 pacakge(rasa_nlu, rasa_core,konlpy)를 설치 하기 위해 프로젝트 폴더에서 다음 명령어를 수행한다.  
+이 후 프로젝트에 필요한 pacakge(rasa_nlu, rasa_core, konlpy 등...)를 설치 하기 위해 프로젝트 폴더에서 다음 명령어를 수행합니다.
 
 ```bash
 ❯❯❯ pip install -r requirements.txt
@@ -41,7 +41,7 @@ Post는 다음 순서로 설명할 것이다.
 
 ## RASA NLU 모델 학습
 
-RASA NLU 모델 학습을 위해서는 다음 2가지 데이터가 필요하다.
+RASA NLU 모델 학습을 위해서는 학습데이터 `nlu_data.md`와 Component와 언어 정보를 포함한 `nlu_config.yml`에 대한 정의가 필요합니다. 
 
 ###  학습을 위한 Training Data(각 Intent의 Training Examples) 정의
 
@@ -55,8 +55,7 @@ RASA NLU 모델 학습을 위해서는 다음 2가지 데이터가 필요하다.
 
 [./nlu_config.yml](https://github.com/RasaHQ/starter-pack-rasa-stack/blob/master/nlu_config.yml)
 
-
-[spacy_sklearn](https://rasa.com/docs/nlu/choosing_pipeline/#spacy-sklearn)은 `한국어`를 지원하지 않으므로 [tensorflow_embedding](https://rasa.com/docs/nlu/choosing_pipeline/#tensorflow-embedding)에서 toeknization 를 Custom Component인 [KoreanTokenizer](https://github.com/y-rok/Korean_starter-pack-rasa-stack/blob/master/component/korean_tokenizer.py)로 수정하여 사용한다. 
+[spacy_sklearn](https://rasa.com/docs/nlu/choosing_pipeline/#spacy-sklearn)은 `한국어`를 지원하지 않으므로 [tensorflow_embedding](https://rasa.com/docs/nlu/choosing_pipeline/#tensorflow-embedding)에서 toeknization 를 Custom Component인 [KoreanTokenizer](https://github.com/y-rok/Korean_starter-pack-rasa-stack/blob/master/component/korean_tokenizer.py)로 수정하여 사용합니다.
 
 ```yml
 language: "kr"
