@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[MT-DNN 논문 Review] Multi-Task Deep Neural Networks for Natural Language Understanding"
-date:   2019-04-28 00:00:00
+date:   2019-05-20 00:00:00
 author: y-rok
 categories: 
 - nlp
@@ -23,13 +23,13 @@ tags:
 
 다음의 순서로 논문을 설명하도록하곘습니다.
 
-[1. Language Representation](#1.-Language-Representation)
+[1. Language Representation](#language-representation)
 
-[2. Tasks](#2.-Tasks)
+[2. Tasks](#tasks)
 
-[3. Model Architecture & Training](#3.-Model-Architecture-&-Training)
+[3. Model Architecture & Training](#model-architecture--training)
 
-[4. Evaluation](#4.-Evaluation)
+[4. Evaluation](#evaluation)
 
 ## 1. Language Representation
 
