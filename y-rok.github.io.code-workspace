@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"pasteImage.basePath": "${projectRoot}",
+		"pasteImage.path": "${projectRoot}/assets/img/"
+	}
+}

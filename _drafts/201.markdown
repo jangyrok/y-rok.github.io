@@ -18,5 +18,3 @@ tags: python pycharm
 [Pycharm 공식 페이지](https://www.jetbrains.com/pycharm/download/#section=mac)에서 원하는 Edtion을 다운받아 설치한다.
 
 
-![](/assets/img/temp/pycharm_intro.png)
-
