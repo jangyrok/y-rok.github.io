@@ -23,13 +23,13 @@ tags:
 
 다음의 순서로 논문을 설명하도록하곘습니다.
 
-[1. Language Representation](#language-representation)
+[1. Language Representation](#1-language-representation)
 
-[2. Tasks](#tasks)
+[2. Tasks](#2-tasks)
 
-[3. Model Architecture & Training](#model-architecture--training)
+[3. Model Architecture & Training](#3-model-architecture--training)
 
-[4. Evaluation](#evaluation)
+[4. Evaluation](#4-evaluation)
 
 ## 1. Language Representation
 
