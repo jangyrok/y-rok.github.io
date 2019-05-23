@@ -15,7 +15,7 @@ tags:
 
 {% include youtube.html id="wyQnuXmXOAs" %} 
 
-## MT-DNN 핵심 요약
+## [MT-DNN](https://arxiv.org/abs/1901.11504) 핵심 요약
 
 - [BERT](https://arxiv.org/abs/1810.04805)에 Multi-task learning([GLUE](https://gluebenchmark.com/)의 9개 Task 활용)을 수행하여 성능 개선한 모델
     - 다양한 Task의 **Supervised Dataset**을 모두 사용하여 **대용량 데이터**로 학습
