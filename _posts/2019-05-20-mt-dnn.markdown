@@ -11,6 +11,9 @@ tags:
 - paper review
 ---
 
+## 발표 영상 ([발표 자료 PDF](https://www.slideshare.net/RokJang/mtdnn))
+
+{% include youtube.html id="wyQnuXmXOAs" %} 
 
 ## MT-DNN 핵심 요약
 
@@ -91,7 +94,7 @@ MT-DNN은 GLUE의 9개의 Task를 Multi-task learning에 활용합니다. 이를
 
 - RTE, MNLI - 문장 간의 의미적 관계를 3가지로 분류 (Entailment, Contradiction, Neutral)
 
-![](/assets/img/Untitled-6114f101-0615-419b-881c-6927b02b18f3.png)
+![](https://y-rok.github.io/assets/img/Untitled-6114f101-0615-419b-881c-6927b02b18f3.png)
 
 - QQP, MRPC - 문장 간 의미가 같음 여부를 분류 (True/False)
 
@@ -105,7 +108,7 @@ MT-DNN은 GLUE의 9개의 Task를 Multi-task learning에 활용합니다. 이를
 ## 3. Model Architecture & Training
 
 
-![](/assets/img/Untitled-5daa626f-1b42-4f5b-818e-eb6bbe294093.png)
+![](https://y-rok.github.io/assets/img/Untitled-5daa626f-1b42-4f5b-818e-eb6bbe294093.png)
 
 MT-DNN은 위 그림과 같이 Transformer로 구성된 Shared Layer(Lexicon Encoder, Transformer Encoder)와 Task 별로 다른 Task Specific Layer로 구성됩니다. 여기서 **Shared Layer는 BERT와 동일하지만 Task specific Layer는 BERT의 Task Specific Layer와 일부 다르게 구성**됩니다. 
 
@@ -113,7 +116,7 @@ MT-DNN은 위 그림과 같이 Transformer로 구성된 Shared Layer(Lexicon Enc
 
 #### Lexicon Encoder
 
-![](/assets/img/Untitled-05e51d06-cbeb-4d79-bcfc-cba50514c0bb.png)
+![](https://y-rok.github.io/assets/img/Untitled-05e51d06-cbeb-4d79-bcfc-cba50514c0bb.png)
 
 Task에 따라 한개의 문장 혹은 여러개의 문장을 Input으로 받는 Layer로 그림과 같이 3가지 Embedding을 활용하여 Input을 구성 하게 됩니다. 
 
@@ -125,14 +128,14 @@ Task에 따라 한개의 문장 혹은 여러개의 문장을 Input으로 받는
 
 #### Transformer Encoder
 
-![](/assets/img/Untitled-7931f066-1cfd-419b-a046-b2e622b01ecf.png){: width="50%"}
+![](https://y-rok.github.io/assets/img/Untitled-7931f066-1cfd-419b-a046-b2e622b01ecf.png){: width="50%"}
 
 
 Lexicon Encoder로 부터 각 Token의 Input Vector를 입력으로 받아 Transformer를 통해 각 Token의 Output Vector를 추출합니다. Transformer이기 때문에 생성된 Vector는 Self Attention을 통해 주변 Token 정보를 반영한 Contextual Embedding Vector입니다.
 
 #### Single-Sentence Classification Output
 
-![](/assets/img/Untitled-b505ff79-fd58-441a-9cc2-7b9194c4820b.png){: width="50%"}
+![](https://y-rok.github.io/assets/img/Untitled-b505ff79-fd58-441a-9cc2-7b9194c4820b.png){: width="50%"}
 
 하나의 문장을 분류하는 Task는 [CLS] Token을 사용합니다. 수식과 같이 [CLS] Token과 Task Specific Parameter의 곱에 Softmax를 취하여 Output을 추출합니다. 
 
@@ -140,7 +143,7 @@ Lexicon Encoder로 부터 각 Token의 Input Vector를 입력으로 받아 Trans
 
 #### Text Similarity Output
 
-![](/assets/img/Untitled-6ed73731-4502-40fa-83e8-b84ff65c7325.png){: width="50%"}
+![](https://y-rok.github.io/assets/img/Untitled-6ed73731-4502-40fa-83e8-b84ff65c7325.png){: width="50%"}
 Single Sentence Classification과 마찬가지로 [CLS] Token을 활용하며  Regression Task이므로 Task Specific Parameter와 곱하고 sigmoid function을 사용하여 Score를 예측합니다.
 
 
@@ -153,35 +156,35 @@ Single Sentence Classification과 마찬가지로 [CLS] Token을 활용하며  R
 
 먼저, SAT와 GRE가 test라는 것을 유추하고 이후에 두 문장의 의미가 비슷한지 여부를 판단하는 적어도 2 step의 Reasoning이 필요할 것입니다. 이를 위해, RNN으로 time step 마다 Classification 결과를 예측하고 해당 결과들을 조합하여 사용하고자 하는 것이 SAN입니다.
 
-![](/assets/img/2019-05-19-18-10-16.png)
+![](https://y-rok.github.io/assets/img/2019-05-19-18-10-16.png)
 
 두 문장을 각각 Hypothiesis 문장, Premise 문장이라고 할 때, **RNN(GRU)의 Input은 Hypothesis 문장을 그리고 Hidden State는 Premise 문장을 Embedding 하는데 사용**됩니다. 여기서 문장 Embedding이란 Transformer에 의해 생성된 Token Vector들의 Weighted Sum을 의미합니다. 
 
 즉, Input x는 이전 Hidden State(Hypothesis 문장의 Embedding)를 고려한 Premise 문장의 Embedding Vector, Hidden State는 Input값(Premise 문장 Embedding)을 고려하여 변형한 Hypothesis 문장의 Embedding이 됩니다. SAN은 time step 마다 문장 간 관계를 고려하여 각 문장의 Embedding을 변형해 가며 생성한다고 볼 수 있습니다.
 
-![](/assets/img/2019-05-19-18-23-14.png){: width="50%"}
+![](https://y-rok.github.io/assets/img/2019-05-19-18-23-14.png){: width="50%"}
 
 각 time step의 Classification 예측은 위 식을 통해 이루어집니다. Softmax를 구성하는 Vector는 Heuristic하게 구성된 것이며 [이 곳](https://www.aclweb.org/anthology/P16-2022)에서 부터 얻은 Idea입니다. **두 문장 자체의 Embedding Vector, 그리고 두 문장 간 관계(차의 크기와 Dot Product)를 concat하여 구성된 Vector를 활용하여 문장 간 관계를 분류**합니다. Multi-step Reasoning 이므로 만약 K번 RNN을 통해 예측했다면 K번 결과의 평균값을 통해 최종 결과를 예측하게 됩니다.
 
 #### Relevance Ranking Output
 
-![](/assets/img/2019-05-19-18-42-32.png){: width="50%"}
+![](https://y-rok.github.io/assets/img/2019-05-19-18-42-32.png){: width="50%"}
 
 Relevance Ranking은 Question과 문장 Pair를 Input으로 넣어 생성한 [CLS] Token에 Sigmoid를 취하여 문장 별로 점수를 Scoring하고 가장 높은 점수 만 Question에 해당하는 정답이 있다고 예측하는 방식으로 Classification을 수행합니다. 
 
 
 ## 4. Evaluation
 
-![](/assets/img/2019-05-19-19-31-18.png)
+![](https://y-rok.github.io/assets/img/2019-05-19-19-31-18.png)
 
 위의 표는 GLUE Task에 대한 성능 평가 결과를 나타냅니다. **MT-DNN은 BERT 보다 전체 성능이 약 1.8% 향상**되어 82.2%로 현재(2019.05 기준) [GLUE Leaderboard](https://gluebenchmark.com/leaderboard)에서 가장 높은 성능을 보이고 있습니다. (표의 성능 지표는 Accuracy 혹은 Accuracy/F1-score를 의미합니다.)
 
 주목해야할 점 중 하나는 **Dataset이 적은 Task(MRPC, RTE)의 경우 비교적 높은 성능 향상**이 있었다는 것입니다. 이는 다른 Task를 통해 학습한 정보를 모델이 잘 활용한 덕분에 얻은 결과로 볼 수 있습니다.
 
-![](/assets/img/2019-05-19-19-46-48.png)
+![](https://y-rok.github.io/assets/img/2019-05-19-19-46-48.png)
 
 위의 표에서 ST-DNN은 Multi-task learning은 수행하지 않고 Task Speicific Layer만 바꾸어 수행한 결과를 나타냅니다. 논문에서 SAN을 사용한 Multi-step Reasoning을 하나의 강점으로 제안했으나 BERT의 결과 보다 큰 성능 개선은 없어 보입니다. 다만, SAN을 사용하기 때문에 BERT와 달리 Pairwise Text Classification에서 [CLS] Token을 사용하지 않고 Wordpiece Token들을 사용했다는게 특이한점입니다. 또한, Relavance Ranking의 경우 BERT 보다 상당히 높은 성능을 보이는데 BERT는 Ranking 방식을 사용하지 않고 모든 문장 Pair에 대해 결과를 따로 예측하기 때문입니다. 
 
-![](/assets/img/2019-05-19-20-02-28.png){: width="80%"}
+![](https://y-rok.github.io/assets/img/2019-05-19-20-02-28.png){: width="80%"}
 
 마지막으로 위의 표는 MT-DNN을 GLUE Task와 다른 Task인 SNLI와 SciTail에 적용했을 경우 BERT와의 성능 비교를 보여줍니다. 그래프의 x축은 Fine Tuning에 사용된 SNLI와 SciTail의 Dataset량을 나타냅니다. 사실, SNLI와 SciTail은 Natural Language Inference Task로 MT-DNN은 이에 대해 벌써 학습되었고 BERT는 그렇지 않으므로 적은 데이터량으로 Fine Tuning 시 MT-DNN의 성능이 훨씬 높은 것은 당연한 것으로 보입니다. 다만, **MT-DNN은 문장의 의미를 BERT에 비해 더 잘 학습한 상태인 것**은 분명해 보이니 모델 사용시 상황에 따라 MT-DNN을 BERT 대신 사용하는 것은 확실히 이점이 있을 것 같습니다.
