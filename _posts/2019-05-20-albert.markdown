@@ -55,9 +55,11 @@ Pre-trained language representation 모델은 일반적으로 모델의 크기�
 
 ### 1.1. Memory Limitation
 
+
+
 모델이 클 경우 메모리량이 부족하여 OOM(Out-of Memory)이 발생할 수 있습니다. 128GB의 TPUv3을 여유롭게 사용할 수 있다면 문제가 없겠지만 12GB의 Titan X GPU를 사용한다고 해봅시다. [이 경우 BERT 학습 시 OOM이 발생하지 않을 때 Sequence Length에 따른 Maximum Batch Size가 아래와 같습니다.](https://github.com/google-research/bert/blob/master/README.md)
 
-![](./assets/img/2019-10-23-21-45-53.png)
+![](/assets/img/2019-10-23-21-45-53.png)
 
 BERT Large의 경우 Input의 Sequence length가 384 이상이라면 Training은 물론 Inference도 할 수 없습니다.
 
