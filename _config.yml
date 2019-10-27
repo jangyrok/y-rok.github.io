@@ -10,7 +10,7 @@ exclude:
 
 # Site settings
 title: Y Rok's Blog
-subtitle: "The blog page for my studies and projects"
+subtitle: "Deep learning, NLP"
 email: jyrok3357@gmail.com
 name: Youngrok Jang
 description: >
@@ -186,9 +186,9 @@ social:
 # These are for automatically generating sharing metadata for FB and Twitter
 # OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
 protocols:
-    fb_image: "/assets/logo.png"
-    fb_image_width: 612
-    fb_image_height: 605
+    fb_image: "/assets/profile.png"
+    fb_image_width: 128
+    fb_image_height: 128
     fb_image_type: "image/png"
 
     twitter_image: "/assets/logo.png"
