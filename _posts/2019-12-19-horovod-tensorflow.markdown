@@ -19,7 +19,7 @@ tags:
 - [Horovod 란?](#Horovod-란)
 - [Horovod의 Distributed Training 동작 방식](#horovod의-distributed-training-동작-방식)
 - [서버 환경의 Distributed Training 성능 측정하기](#서버-환경의-distributed-training-성능-측정하기)
-- [BERT Fine Tuning을 Distributed Training으로 구현해보기](#bert-fine-tuning을-distributed-training으로-구현해보기])
+- [BERT Fine Tuning을 Distributed Training으로 구현해보기](#bert-fine-tuning을-distributed-training으로-구현해보기)
 
 ## Horovod 란?
 
