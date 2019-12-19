@@ -16,7 +16,7 @@ tags:
 
 다음의 순서로 설명하겠습니다.
 
-- [Horovod 란?](#Horovod-란)
+- [Horovod 란?](#horovod-란)
 - [Horovod의 Distributed Training 동작 방식](#horovod의-distributed-training-동작-방식)
 - [서버 환경의 Distributed Training 성능 측정하기](#서버-환경의-distributed-training-성능-측정하기)
 - [BERT Fine Tuning을 Distributed Training으로 구현해보기](#bert-fine-tuning을-distributed-training으로-구현해보기)
@@ -230,4 +230,4 @@ def create_optimizer(loss, init_lr, num_train_steps, num_warmup_steps, use_tpu):
   tvars = [var for grad,var in grads_and_vars]
 ~~~
 
-이제 [서버 환경의 Distributed Training 성능 측정하기](#서버 -환경의-distributed-training-성능-측정하기)에서 처럼 Docker Image를 다운 받고 실행 후 학습하면 BERT를 Distributed Training할 수 있습니다.
+이제 [서버 환경의 Distributed Training 성능 측정하기](#서버-환경의-distributed-training-성능-측정하기)에서 처럼 Docker Image를 다운 받고 실행 후 학습하면 BERT를 Distributed Training할 수 있습니다.
