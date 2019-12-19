@@ -16,10 +16,10 @@ tags:
 
 다음의 순서로 설명하겠습니다.
 
-- [Horovod 란?](#Horovod-란?)
-- [Horovod의 Distributed Training 동작 방식](#Horovod의-Distributed-Training 동작-방식)
-- [서버 환경의 Distributed Training 성능 측정하기](#서버-환경의-Distributed-Training-성능-측정하기)
-- [BERT Fine Tuning을 Distributed Training으로 구현해보기](#BERT-Fine-Tuning을-Distributed-Training으로-구현해보기])
+- [Horovod 란?](#Horovod-란)
+- [Horovod의 Distributed Training 동작 방식](#horovod의-distributed-training-동작-방식)
+- [서버 환경의 Distributed Training 성능 측정하기](#서버-환경의-distributed-training-성능-측정하기)
+- [BERT Fine Tuning을 Distributed Training으로 구현해보기](#bert-fine-tuning을-distributed-training으로-구현해보기])
 
 ## Horovod 란?
 
@@ -157,7 +157,7 @@ Horovod를 사용 하기 위해서는 [이 곳의 설명](https://github.com/hor
 
 BERT는 Estimator를 사용하여 구현되어 있습니다. 또한, TPU의 RunConfig를 사용하여 구현되어있으나 TPU가 없을 경우 자동으로 GPU로 동작하므로 걱정하지 않아도 됩니다. BERT를 Horovod로 Distributed Training 하도록 구현하기 위해서는 목적에 따른 학습 실행 코드(**run_pretraining.py, run_classifier.py, run_squad.py**)와 **optimization.py**를 수정해야합니다. 
 
-> *[Horovod의 Distributed Training 동작 방식](#Horovod의-Distributed-Training 동작-방식)에서 설명했듯이 Horovod는 GPU 1개당 1개의 Process를 띄우며 Worker들은 batch size 만큼의 데이터에 대해 Forward, Backward를 통해 Gradients를 구하며 이를 Ring-allreduce 방식으로 주고 받은 후 모델을 Update합니다. 이를 위해 Horovod 코드를 일부 추가하는 것입니다.* 
+> *[Horovod의 Distributed Training 동작 방식](#horovod의-distributed-training-동작-방식)에서 설명했듯이 Horovod는 GPU 1개당 1개의 Process를 띄우며 Worker들은 batch size 만큼의 데이터에 대해 Forward, Backward를 통해 Gradients를 구하며 이를 Ring-allreduce 방식으로 주고 받은 후 모델을 Update합니다. 이를 위해 Horovod 코드를 일부 추가하는 것입니다.* 
 
 먼저 (squad dataset에 대해 학습하는 경우) **run_squad.py** 코드를 수정 합니다.
 
@@ -230,4 +230,4 @@ def create_optimizer(loss, init_lr, num_train_steps, num_warmup_steps, use_tpu):
   tvars = [var for grad,var in grads_and_vars]
 ~~~
 
-이제 [서버 환경의 Distributed Training 성능 측정하기](#서버 -환경의-Distributed-Training-성능-측정하기)에서 처럼 Docker Image를 다운 받고 실행 후 학습하면 BERT를 Distributed Training할 수 있습니다.
+이제 [서버 환경의 Distributed Training 성능 측정하기](#서버 -환경의-distributed-training-성능-측정하기)에서 처럼 Docker Image를 다운 받고 실행 후 학습하면 BERT를 Distributed Training할 수 있습니다.
